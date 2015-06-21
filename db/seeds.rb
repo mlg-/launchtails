@@ -22,7 +22,7 @@ if Rails.env.development?
     'Old Fashioned Astronaut' => 'Shooters',
     'Spacewalk Spritzer' => 'Fortified Wines'
   }.each do |drink_title, category_title|
-    drink = Drink.find_or_create_by!(title: drink_title) do |d|
+    drink = Drink.find_or_create_by!(title: drink_title, description: "Some words") do |d|
       d.featured = true
     end
 
@@ -36,6 +36,6 @@ if Rails.env.development?
     'Red Planet Whiskey Sour',
     'Olympus Mons Manhattan'
   ].each do |drink_title|
-    Drink.find_or_create_by!(title: drink_title)
+    Drink.find_or_create_by!(title: drink_title, description: "Some words")
   end
 end

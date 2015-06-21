@@ -19,6 +19,21 @@
       <%= f.label :description %>
       <%= f.text_area :description %>
 
+      <%= f.label :category_id %>
+      <%= f.collection_select(:category_id, Category.all, :id, :name) %>
+
+      <%= f.label :alcohol_level %>
+      <%= f.radio_button :alcohol_level, "Low" %>
+      <%= f.label :alcohol_level, "Low", value: "Low" %>
+      <%= f.radio_button :alcohol_level, "Medium" %>
+      <%= f.label :alcohol_level, "Medium", value: "Medium" %>
+      <%= f.radio_button :alcohol_level, "High" %>
+      <%= f.label :alcohol_level, "High", value: "High" %>
+
+
+      <%= f.label :featured %>
+      <%= f.check_box :featured %><br/>
+
       <%= f.submit "Add Drink" %>
     <%- end -%>
   </div>

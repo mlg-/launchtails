@@ -14,7 +14,11 @@ class DrinksController < ApplicationController
   end
 
   def index
-    @drinks = Drink.page(params[:page])
+    if params[:category_id]
+      @drinks = Category.find(params[:category_id]).drinks.page(params[:page])
+    else
+      @drinks = Drink.page(params[:page])
+    end
   end
 
   protected
